@@ -67,7 +67,8 @@ long	ft_atol(const char *str)
 		res = res * 10 + str[i] - '0';
 		i++;
 	}
+	res *= sign;
 	if (res > INT_MAX || res < INT_MIN)
 		return (0);
-	return (res * sign);
+	return (res);
 }

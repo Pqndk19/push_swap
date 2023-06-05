@@ -35,6 +35,7 @@ void	fill_my_stack(int size, char **elem, t_stack *a, t_stack *b)
 		if (nbr == 0 && elem[i_arg][0] != '0')
 		{
 			free(a->all_stack);
+			printf("BANANA\n");
 			error_msg();
 		}
 		a->all_stack[++i_stack] = nbr;
