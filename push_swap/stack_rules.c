@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void get_mn(t_stack *a)
+void	get_mn(t_stack *a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	a->min = a->all_stack[0];
@@ -32,21 +32,19 @@ void get_mn(t_stack *a)
 			a->min = a->all_stack[i];
 		i++;
 	}
-	//printf("MAX: %d\n", a->max);
-	//printf("MIN: %d\n", a->min);
 }
 
-int is_digit(int nbr)
+int	is_digit(int nbr)
 {
 	if (nbr >= '0' && nbr <= '9')
 		return (1);
 	return (0);
 }
 
-void check_stack(char **elem)
+void	check_stack(char **elem)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 1;
 	while (elem[i])
@@ -63,10 +61,10 @@ void check_stack(char **elem)
 	}
 }
 
-void see_dup(t_stack *a)
+void	see_dup(t_stack *a)
 {
-	int i;
-	int curr;
+	int	i;
+	int	curr;
 
 	curr = 0;
 	while (curr < a->size)
@@ -85,15 +83,15 @@ void see_dup(t_stack *a)
 	}
 }
 
-int is_ordered(t_stack *a)
+int	is_ordered(t_stack *a)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < a->size - 1)
 	{
-			if (a->all_stack[i] > a->all_stack[i + 1])
-				return (1);
+		if (a->all_stack[i] > a->all_stack[i + 1])
+			return (1);
 		i++;
 	}
 	return (0);

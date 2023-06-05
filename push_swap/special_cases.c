@@ -12,15 +12,13 @@
 
 #include "push_swap.h"
 
-void special_cases(t_stack *a)
+void	special_cases(t_stack *a)
 {
-	int max;
-	int min;
+	int	max;
+	int	min;
 
 	max = get_max_spc(a);
 	min = get_min_spc(a);
-	//printf("MAX SPC %d\n", max);
-	//printf("MIN SPC %d\n", min);
 	if (a->all_stack[0] != min && a->all_stack[2] == max)
 		sa(a);
 	else if (a->all_stack[0] == max && a->all_stack[2] == min)

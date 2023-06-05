@@ -12,63 +12,64 @@
 
 #include "push_swap.h"
 
-int get_max_bits(t_stack *a)
+int	get_max_bits(t_stack *a)
 {
-	int max_bits;
+	int	max_bits;
+	int	size;
 
 	max_bits = 0;
-	while ((a->max >> max_bits) != 0)
-		max_bits++;
+	size = a->size;
+	while (size > 1 && ++max_bits)
+		size /= 2;
 	return (max_bits);
 }
 
-void stack_index(t_stack *a, t_stack *c)
+void	stack_index(t_stack *a, t_stack *c)
 {
-	int i;
-	int j;
-	i = 0;
-	fill_c(a, c);
-	sort_c(c);
-	while (i < a->size)
+	int	i;
+	int	j;
+	int	index;
+
+	i = -1;
+	while (++i < a->size)
 	{
-		j = 0;
-		while (c->all_stack[j])
-		{
-			if (c->all_stack[j] == a->all_stack[i])
-			{
-				a->all_stack[i] = j;
-				break ;
-			}
-			j++;
-		}
-		i++;
+		index = 0;
+		j = -1;
+		while (++j < a->size)
+			if (a->all_stack[i] > a->all_stack[j])
+				index++;
+		c->all_stack[i] = index;
 	}
+	i = -1;
+	while (++i < a->size)
+		a->all_stack[i] = c->all_stack[i];
+	free(c->all_stack);
 }
 
-void radix(t_stack *a, t_stack *b, t_stack *c)
+void	radix(t_stack *a, t_stack *b, t_stack *c)
 {
-	int max_bits;
-	int i;
-	int j;
-	int size;
+	int	max_bits;
+	int	i;
+	int	j;
+	int	size;
 
+	c->size = a->size;
+	c->all_stack = malloc(sizeof(int) * c->size + 1);
 	stack_index(a, c);
 	max_bits = get_max_bits(a);
 	size = a->size;
-	i = 0;
-	while (i < max_bits)
+	i = -1;
+	while (++i <= max_bits)
 	{
-		j = 0;
-		while (j < size)
+		j = -1;
+		while (++j < size)
 		{
 			if (((a->all_stack[0] >> i) & 1) == 1)
 				ra(a);
 			else
 				pb(a, b);
-			j++;
 		}
 		while (b->size != 0)
 			pa(a, b);
-		i++;
 	}
 }

@@ -15,7 +15,8 @@ CC = cc
 CFLAGS = -Werror -Wall -Wextra -g
 LIBFT =	./libft/libft.a
 SRC =	./push_swap.c ./init_stack.c ./stack_rules.c ./utils.c ./operations.c \
-		./special_cases.c ./sort_5.c ./radix.c ./utils_end.c
+		./operations_2.c ./special_cases.c ./sort_5.c ./radix.c \
+		./utils_end.c
 
 OBJ =	$(SRC:.c=.o)
 

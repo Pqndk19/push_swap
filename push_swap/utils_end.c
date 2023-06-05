@@ -12,21 +12,20 @@
 
 #include "push_swap.h"
 
-void error_msg(void)
+void	error_msg(void)
 {
 	ft_putstr_fd("Error", 1);
 	write(1, "\n", 1);
-	exit (1);
+	exit(1);
 }
 
-void exit_success(void)
+void	exit_success(void)
 {
 	exit(1);
 }
 
-void free_stacks(t_stack *a, t_stack *b, t_stack *c)
+void	free_stacks(t_stack *a, t_stack *b)
 {
 	free(a->all_stack);
 	free(b->all_stack);
-	free(c->all_stack);
 }

@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 long	ft_atoi(const char *str)
 {
 	long	res;
 	long	sign;
-	int i;
+	int		i;
 
 	res = 0;
 	sign = 1;
@@ -40,11 +40,11 @@ long	ft_atoi(const char *str)
 }
 
 /*
-int	main()
+int	main(void)
 {
-	char nptr[] = "--765abc";
+	char	nptr[];
 
+	nptr[] = "--765abc";
 	printf("%i\n", ft_atoi(nptr));
 }
 */
-

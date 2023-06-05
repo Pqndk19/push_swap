@@ -25,14 +25,14 @@ typedef struct s_stack
 }	t_stack;
 
 
-void fill_my_stack(int size, char **elem, t_stack *a, t_stack *b, t_stack *c);
+void fill_my_stack(int size, char **elem, t_stack *a, t_stack *b);
 void error_msg(void);
 void check_stack(char **elem);
 void see_dup(t_stack *a);
 long	ft_atol(const char *str);
 int is_ordered(t_stack *a);
 void exit_success(void);
-void free_stacks(t_stack *a, t_stack *b, t_stack *c);
+void free_stacks(t_stack *a, t_stack *b);
 void radix(t_stack *a, t_stack *b, t_stack *c);
 int get_max_bits(t_stack *a);
 void stack_index(t_stack *a, t_stack *c);

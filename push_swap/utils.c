@@ -12,41 +12,10 @@
 
 #include "push_swap.h"
 
-void sort_c(t_stack *c)
+int	get_max_spc(t_stack *a)
 {
-	int i;
-	int tmp;
-	i = 0;
-	while(i < c->size - 1)
-	{
-		if (c->all_stack[i] > c->all_stack[i + 1])
-		{
-			tmp = c->all_stack[i];
-			c->all_stack[i] = c->all_stack[i + 1];
-			c->all_stack[i + 1] = tmp;
-			i = 0;
-		}
-		else
-			i++;
-
-	}
-}
-
-void fill_c(t_stack *a, t_stack *c)
-{
-	int i;
-	i = 0;
-	while (i < a->size)
-	{
-		c->all_stack[i] = a->all_stack[i];
-		i++;
-	}
-}
-
-int get_max_spc(t_stack *a)
-{
-	int max;
-	int i;
+	int	max;
+	int	i;
 
 	i = 0;
 	max = a->all_stack[i];
@@ -59,10 +28,10 @@ int get_max_spc(t_stack *a)
 	return (max);
 }
 
-int get_min_spc(t_stack *a)
+int	get_min_spc(t_stack *a)
 {
-	int min;
-	int i;
+	int	min;
+	int	i;
 
 	i = 0;
 	min = a->all_stack[i];
@@ -78,8 +47,8 @@ int get_min_spc(t_stack *a)
 long	ft_atol(const char *str)
 {
 	long	res;
-	int	sign;
-	int i;
+	int		sign;
+	int		i;
 
 	res = 0;
 	sign = 1;

@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void sort_5(t_stack *a, t_stack *b)
+void	sort_5(t_stack *a, t_stack *b)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i <= a->size)
@@ -32,5 +32,5 @@ void sort_5(t_stack *a, t_stack *b)
 		sb(b);
 	pa(a, b);
 	pa(a, b);
-	ra(a);	
+	ra(a);
 }
